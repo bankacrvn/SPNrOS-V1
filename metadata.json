@@ -1,0 +1,6 @@
+{
+  "name": "SPN rOS - Enterprise ERP/POS",
+  "description": "Apple-inspired Enterprise Restaurant ERP & POS System with real-time Supabase sync, inventory control, cashier shift management, HR, accounting, and audit logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
