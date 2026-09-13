@@ -7,10 +7,13 @@ import {
 const STORAGE_KEY_SUPABASE_URL = 'spn_ros_supabase_url';
 const STORAGE_KEY_SUPABASE_ANON_KEY = 'spn_ros_supabase_anon_key';
 
+export const DEFAULT_SUPABASE_URL = 'https://hytfrzxfcsezipipnpzo.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dGZyenhmY3NlemlwaXBucHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkyNDMzNDIsImV4cCI6MjEwNDgxOTM0Mn0.vVZK7aaVNGLqyuuA1PZMnD6sjj3M07wy4MKVw6Us4FA';
+
 export function getSavedSupabaseCredentials(): { url: string; anonKey: string } {
   const metaEnv = (import.meta as unknown as { env: Record<string, string> }).env || {};
-  const envUrl = metaEnv.VITE_SUPABASE_URL || '';
-  const envKey = metaEnv.VITE_SUPABASE_ANON_KEY || '';
+  const envUrl = metaEnv.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
+  const envKey = metaEnv.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_ANON_KEY;
   const localUrl = localStorage.getItem(STORAGE_KEY_SUPABASE_URL) || envUrl;
   const localKey = localStorage.getItem(STORAGE_KEY_SUPABASE_ANON_KEY) || envKey;
   return { url: localUrl, anonKey: localKey };
